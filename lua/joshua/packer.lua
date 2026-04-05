@@ -21,4 +21,18 @@ return require('packer').startup(function(use)
 
   -- colorscheme: catppuccin https://github.com/catppuccin/nvim
   use { "catppuccin/nvim", as = "catppuccin" }
+
+  -- fuzzy finder: telescope https://github.com/nvim-telescope/telescope.nvim
+  -- other recommended dependencies below:
+  -- ripgrep (rg): https://github.com/BurntSushi/ripgrep
+  -- fd: https://github.com/sharkdp/fd
+  use { "nvim-telescope/telescope.nvim", tag = "*",
+    requires = {
+      { "nvim-lua/plenary.nvim" },
+      { 'nvim-telescope/telescope-fzf-native.nvim',
+        opt = true,
+        run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release --target install',
+      },
+    }
+  }
 end)
