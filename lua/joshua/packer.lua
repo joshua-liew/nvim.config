@@ -35,4 +35,11 @@ return require('packer').startup(function(use)
       },
     }
   }
+
+  -- file switcher: harpoon(2) https://github.com/ThePrimeagen/harpoon/tree/harpoon2
+  use {
+    "ThePrimeagen/harpoon", branch = "harpoon2",
+    requires = { {"nvim-lua/plenary.nvim"} }
+  }
+
 end)
