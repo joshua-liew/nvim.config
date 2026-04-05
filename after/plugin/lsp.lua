@@ -45,6 +45,7 @@ vim.lsp.config['go_ls'] = {
   root_markers = { { 'go.work', 'go.mod' }, '.vim', '.git', '.hg' },
 }
 
+-- Enable the LSPs
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('go_ls')
 
