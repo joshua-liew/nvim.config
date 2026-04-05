@@ -42,4 +42,14 @@ return require('packer').startup(function(use)
     requires = { {"nvim-lua/plenary.nvim"} }
   }
 
+  -- package manager for LSP servers etc.: mason
+  -- https://github.com/mason-org/mason.nvim
+  -- minimum dependencies: git, curl/wget, unzip, tar/gtar, gzip
+  use {
+    "mason-org/mason.nvim",
+    config = function()
+      require("mason").setup()
+    end
+  }
+
 end)
