@@ -86,4 +86,19 @@ return require('packer').startup(function(use)
     end
   }
 
+  -- focus: zen-mode https://github.com/folke/zen-mode.nvim?tab=readme-ov-file
+  use {
+    "folke/zen-mode.nvim",
+    config = function()
+      require("zen-mode").setup({
+        plugins = {
+          options = {
+            laststatus = 3,
+          },
+          twilight = { enabled = false },
+        },
+      })
+    end
+  }
+
 end)
