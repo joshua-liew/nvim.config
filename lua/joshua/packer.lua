@@ -58,4 +58,32 @@ return require('packer').startup(function(use)
     "nvim-treesitter/nvim-treesitter", tag = "v0.10.0", run = ":TSUpdate"
   }
 
+  -- statusline: lightline https://github.com/itchyny/lightline.vim
+  use {
+    "itchyny/lightline.vim",
+    requires = { {"itchyny/vim-gitbranch"} },
+    config = function()
+      vim.opt.showmode = false
+      vim.g.lightline = {
+        colorscheme = 'material',
+        active = {
+          left = {
+            { 'mode', 'paste' },
+            { 'gitbranch', 'readonly', 'filename', 'modified' }
+          }
+        },
+        component_function = {
+          gitbranch = 'gitbranch#name',
+          filename = 'v:lua.relfilepath',
+        }
+      }
+
+      -- display (buffer) relative filepath
+      _G.relfilepath = function()
+        local path = vim.fn.expand('%:.')
+        return path ~= '' and path or '[No Name]'
+      end
+    end
+  }
+
 end)
