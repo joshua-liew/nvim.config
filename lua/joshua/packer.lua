@@ -55,6 +55,7 @@ return require('packer').startup(function(use)
   -- parser installer: tree-sitter-manager
   -- https://github.com/romus204/tree-sitter-manager.nvim
   -- nvim-treesitter is super buggy
+  -- requires tree-sitter (cli): https://github.com/tree-sitter/tree-sitter
   use "romus204/tree-sitter-manager.nvim"
 
   -- statusline: lightline https://github.com/itchyny/lightline.vim
