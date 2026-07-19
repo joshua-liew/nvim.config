@@ -52,11 +52,10 @@ return require('packer').startup(function(use)
     end
   }
 
-  -- parser installer: nvim-treesitter
-  -- https://github.com/nvim-treesitter/nvim-treesitter
-  use {
-    "nvim-treesitter/nvim-treesitter", tag = "v0.10.0", run = ":TSUpdate"
-  }
+  -- parser installer: tree-sitter-manager
+  -- https://github.com/romus204/tree-sitter-manager.nvim
+  -- nvim-treesitter is super buggy
+  use "romus204/tree-sitter-manager.nvim"
 
   -- statusline: lightline https://github.com/itchyny/lightline.vim
   use {
